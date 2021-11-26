@@ -16,10 +16,10 @@ public class TestClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		BubbleSort sort = new BubbleSort();
+		InsertionSort insertion = new InsertionSort();
 		int array[] = {40, 30, 70, 50, 22, 65};
 		
-		sort.sort(array);
+		insertion.sort(array);
 		display(array);
 	}
 
