@@ -21,8 +21,9 @@ public class TestClass {
 	}
 	
 	public static void display(int [] array) {
-		for (int i = 0; i < array.length; i++)
-			System.out.print(" " + array[i]);
+		for (int j : array) {
+			System.out.print(" " + j);			
+		}
 		System.out.println();
 	}
 
