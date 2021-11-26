@@ -16,10 +16,10 @@ public class TestClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		InsertionSort insertion = new InsertionSort();
+		MergeSort merge = new MergeSort();
 		int array[] = {40, 30, 70, 50, 22, 65};
 		
-		insertion.sort(array);
+		merge.sort(array, 0, array.length - 1);
 		display(array);
 	}
 
