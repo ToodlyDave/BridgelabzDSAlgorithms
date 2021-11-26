@@ -6,21 +6,17 @@ public class TestClass {
 	
 	static Scanner scan = new Scanner(System.in);
 	
-	public static void display(int [] array) {
-		for (int j : array) {
-			System.out.print(" " + j);			
-		}
-		System.out.println();
-	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		MergeSort merge = new MergeSort();
-		int array[] = {40, 30, 70, 50, 22, 65};
+		System.out.print(" Please enter the first string: ");
+		String one = scan.next();
 		
-		merge.sort(array, 0, array.length - 1);
-		display(array);
+		System.out.print(" Please enter the second string: ");
+		String two = scan.next();
+		
+		AnagramDetection obj = new AnagramDetection();
+		obj.anagram(one, two);
 	}
 
 }
