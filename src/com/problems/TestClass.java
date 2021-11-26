@@ -6,20 +6,6 @@ public class TestClass {
 	
 	static Scanner scan = new Scanner(System.in);
 	
-	public static int[] getArray() {
-		System.out.print(" Please enter the size of the array: ");
-		int n = scan.nextInt();
-		
-		int array[] = new int[n];
-		
-		for (int i = 0; i < n; i++) {
-			System.out.print(" Please enter the " + (i + 1) + " value: ");
-			array[i] = scan.nextInt();
-		}
-		
-		return array;
-	}
-	
 	public static void display(int [] array) {
 		for (int j : array) {
 			System.out.print(" " + j);			
@@ -31,7 +17,7 @@ public class TestClass {
 		// TODO Auto-generated method stub
 		
 		BubbleSort sort = new BubbleSort();
-		int array[] = getArray();
+		int array[] = {40, 30, 70, 50, 22, 65};
 		
 		sort.sort(array);
 		display(array);
