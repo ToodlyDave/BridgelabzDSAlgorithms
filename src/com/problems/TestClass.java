@@ -1,17 +1,17 @@
 package com.problems;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class TestClass {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		String[] array = {"hi", "there", "these", "are", "random", "words", "in", "an", "array"};
-		BinarySearch binary = new BinarySearch();
-		Arrays.sort(array);
-		
-		binary.binarySearch(array, 0, array.length, "hi");
+		Scanner scan = new Scanner(System.in);
+		System.out.print(" Please enter the range: ");
+		int range = scan.nextInt();
+		FindYourNumber find = new FindYourNumber();
+		find.find(0, range);
 	}
 
 }
