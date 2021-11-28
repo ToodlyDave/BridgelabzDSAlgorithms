@@ -2,7 +2,7 @@ package com.problems;
 
 public class BinarySearch {
 
-	public void binarySearch(String[] array, int low, int high, String data) {
+	public <T extends Comparable<T>> void binarySearch(T[] array, int low, int high, T data) {
 
         int mid = (low + high) / 2;
 

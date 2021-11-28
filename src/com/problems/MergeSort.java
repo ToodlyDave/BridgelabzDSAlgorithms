@@ -1,8 +1,10 @@
 package com.problems;
 
+import java.lang.reflect.Array;
+
 public class MergeSort {
 	
-	public int[] sort(int [] array, int low, int high) {
+	public <T extends Comparable<T>> T[] sort(T [] array, int low, int high) {
 		
 		if(high - low < 1) 
 			return array;
@@ -15,11 +17,12 @@ public class MergeSort {
 		return merge(array, low, mid, high);
 	}
 	
-	public int[] merge(int [] array, int low, int mid, int high) {
+	public <T extends Comparable<T>> T[] merge(T [] array, int low, int mid, int high) {
 		
-		int [] first = new int[mid - low + 1];
-		int [] second = new int[high - mid];
-		
+		@SuppressWarnings("unchecked")
+		T[] first = (T[]) Array.newInstance(array[0].getClass(), mid - low  + 1);
+		@SuppressWarnings("unchecked")
+		T[] second = (T[]) Array.newInstance(array[0].getClass(), high - mid);
 		for(int i = 0; i < mid - low + 1; i++) 
 			first[i] = array[low + i];
 		for(int i = 0; i < high - mid; i++) 
@@ -28,7 +31,7 @@ public class MergeSort {
 		int k = low, i = 0, j = 0;
 		
 		while (i < first.length && j < second.length) {
-			if(first[i] < second[j]) 
+			if(first[i].compareTo(second[j]) < 0) 
 				array[k++] = first[i++];
 			else
 				array[k++] = second[j++];

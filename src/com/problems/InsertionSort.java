@@ -2,21 +2,18 @@ package com.problems;
 
 public class InsertionSort {
 
-	public int[] sort(int [] array) {
+	public <T extends Comparable<T>> T[] sort(T [] array) {
 		
 		for (int i = 0; i < array.length; i++) {
-			int temp = array[i];
+			T temp = array[i];
 			int index = i - 1;
-			while(index >= 0 && array[index] > temp) {
+			while(index >= 0 && array[index].compareTo(temp) > 0) {
 				array[index + 1] = array[index];
 				index--;
 			}
 			
-			array[index + 1] = temp;
-			
-		}
-		
-		
+			array[index + 1] = temp;			
+		}		
 		return array;
 	}
 }
