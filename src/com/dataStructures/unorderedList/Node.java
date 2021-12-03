@@ -1,4 +1,4 @@
-package unorderedList;
+package com.dataStructures.unorderedList;
 
 public class Node {
 
