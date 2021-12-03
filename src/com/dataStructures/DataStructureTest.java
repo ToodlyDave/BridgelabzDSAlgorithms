@@ -1,41 +1,29 @@
 package com.dataStructures;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import com.dataStructures.unorderedList.UnorderedList;
+import com.dataStructures.orderedList.OrderedLinkedList;
 
 public class DataStructureTest {
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		UnorderedList list = new UnorderedList();
-		String str = "";
-		int ch;
-		try {
-			Scanner scanFile = new Scanner(new File("src/input.txt") );
-			str = scanFile.nextLine();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			System.out.println(" ERROR: The file was not found!");
-		}
 		
-		for (String words : str.split(" ") ) {
-			list.insert(words);
-		}
-		list.display();
+		int ch;
+		OrderedLinkedList list = new OrderedLinkedList();
+		Scanner scan = new Scanner(System.in);
+		
+		list.readNumbers();
 		
 		while(true) {
-			System.out.println("\n 1. Search word\n 2. Display list\n 3. Finish up");
+			System.out.println("\n 1. Search number\n 2. Display list\n 3. Finish up");
 			System.out.print(" Please enter your choice: ");
 			ch = scan.nextInt();
 			
 			switch(ch) {
 			case 1: 
-				System.out.print(" Please enter the word you want to search for: ");
-				String word = scan.next();
-				list.checkWord(word);
+				System.out.print(" Please enter the number you want to search for: ");
+				int number = scan.nextInt();
+				list.checkNumber(number);
 				break;
 			case 2: 
 				list.display();
