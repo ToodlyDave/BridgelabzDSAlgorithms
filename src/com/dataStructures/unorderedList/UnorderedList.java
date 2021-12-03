@@ -1,5 +1,8 @@
 package com.dataStructures.unorderedList;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class UnorderedList {
 	
 	Node head = null;
@@ -65,6 +68,21 @@ public class UnorderedList {
 		while(iterator != null) {
 			System.out.print(" " + iterator.word);
 			iterator = iterator.next;
+		}
+	}
+	
+	public void writeToFile() {
+		try {
+			FileWriter fileWriter = new FileWriter("src/outputUnOrderedList.txt");
+			Node iterator = head;
+			while(iterator != null) {
+				fileWriter.write(" " + iterator.word);
+				iterator = iterator.next;
+			}
+			fileWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(" File could not be created with the output");
 		}
 	}
 }

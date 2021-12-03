@@ -21,13 +21,13 @@ public class DataStructureTest {
 			System.out.println(" ERROR: The file was not found!");
 		}
 		
-		for (String words : str.split(" ")) {
+		for (String words : str.split(" ") ) {
 			list.insert(words);
 		}
 		list.display();
 		
 		while(true) {
-			System.out.println("\n 1. Search word\n 2. Display list\n 3. Exit");
+			System.out.println("\n 1. Search word\n 2. Display list\n 3. Finish up");
 			System.out.print(" Please enter your choice: ");
 			ch = scan.nextInt();
 			
@@ -41,6 +41,7 @@ public class DataStructureTest {
 				list.display();
 				break;
 			case 3:
+				list.writeToFile();
 				scan.close();
 				return;
 			default:
