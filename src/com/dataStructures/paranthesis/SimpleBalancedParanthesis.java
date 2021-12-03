@@ -21,7 +21,6 @@ public class SimpleBalancedParanthesis {
 	}
 	
 	public void pop() {
-		System.out.println("size: " + top);
 		if(top > -2)
 			top--;
 	}
@@ -53,18 +52,10 @@ public class SimpleBalancedParanthesis {
 	
 	public void check(String str) {
 		for(int i = 0; i < str.length(); i++) {
-			System.out.print(" at " + str.charAt(i) + " ");
-			if(str.charAt(i) == '(') {
+			if(str.charAt(i) == '(') 
 				push();
-				System.out.println(" pushing (");
-			}
-			else if(str.charAt(i) == ')') {
+			else if(str.charAt(i) == ')') 
 				pop();
-				System.out.println(" popping");
-			}
-			else 
-				System.out.println(" nothing");
-			display();
 		}
 		if(isempty()) 
 			System.out.println(" The parantheses are balanced");
