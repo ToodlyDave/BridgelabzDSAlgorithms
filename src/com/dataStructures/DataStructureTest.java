@@ -14,7 +14,7 @@ public class DataStructureTest {
 		hash.initializeHashTable();
 
 		while (true) {
-			System.out.println("\n 1. Search\n 2. Display\n 3. Exit");
+			System.out.println("\n 1. Search\n 2. Display\n 3. Finish Up");
 			System.out.print(" Please enter your choice: ");
 			ch = scan.nextInt();
 
@@ -28,6 +28,7 @@ public class DataStructureTest {
 				hash.display();
 				break;
 			case 3:
+				hash.writeIntoFile();
 				scan.close();
 				return;
 			default:

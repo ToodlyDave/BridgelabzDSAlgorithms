@@ -2,6 +2,8 @@ package com.dataStructures.hashTable;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class HashTable {
@@ -97,5 +99,27 @@ public class HashTable {
 
 		insert(n);
 		System.out.println();
+	}
+
+	public void writeIntoFile() {
+		try {
+			FileWriter fw = new FileWriter("src/com/dataStructures/hashTable/output.txt");
+
+			for (ListNode node : table) {
+				if (node == null)
+					fw.write(" [NULL]");
+
+				while (node != null) {
+					fw.write(" " + node.number);
+					node = node.next;
+				}
+				fw.write("\n");
+			}
+			fw.close();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(" ERROR: Could not create a file with output! ");
+		}
 	}
 }
